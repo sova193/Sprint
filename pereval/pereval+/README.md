@@ -1,59 +1,59 @@
-Это API для мобильного приложения, которым могут пользоваться туристы.
+This is an API for a mobile application that tourists can use.
 
-Когда туристы добираются до горного перевала, они могут сделать снимки и использовать мобильное приложение для отправки информации.
+When tourists reach a mountain pass, they can take pictures and use a mobile app to send information.
 
-Результатом отправки является статус и сообщение о состоянии: { "status": 200, "message": "OK"}.
+The result of sending is a status and status message: { "status": 200, "message": "OK"}.
 
-### **Модели**
+### **Models**
 #### **Users**
 
-Модель пользователей, содержит информацию о пользователе: email, пароль, имя, фамилию, отчество.
+User model contains information about the user: email, password, first name, last name and patronymic.
 
 #### **Pereval**
 
-Модель перевалов, содержит информацию о перевалах: название, красивое название, координаты, изображения, статус, дата добавления, идентификатор пользователя, который добавил перевал.
+Model of passes, contains information about the passes: name, beautiful name, coordinates, images, status, date of addition, ID of the user who added the pass.
 
 #### **Coords**
 
-Модель координат, содержит информацию о координатах перевалов: широту, долготу и высоту.
+Coordinate model, contains information about the coordinates of passes: latitude, longitude and altitude.
 
 #### **Images**
 
-Модель изображений перевалов, содержит информацию об изображении и его названии.
+Pass image model, contains information about the image and its name.
 
 #### **Level**
 
-Модель уровней. Содержащая уровень сложности преодоления перевала в каждый сезон.
+Pass image model, contains information about the image and its name.
 
 
 
-### **API методы:**
+### **API methods:**
 
 #### GET /submitData/ method
 
-Возвращает список всех горных перевалов.
+Returns a list of all mountain passes.
 
 #### **POST /submitData/ method**
 
-Позволяет создать запись об одином горном перевале.
+Allows you to create a record of one mountain pass.
 
 #### **GET /submitData/{id}**
 
-Извлекает данные для конкретного горного перевала.
+Retrieves data for a specific mountain pass.
 
 #### **PATCH /submitData/{id}**
 
-Позволяет изменять значения атрибутов записи о горном перевале.
+Allows you to change the attribute values of a mountain pass entry.
 
-В качестве результата вернется сообщениеЮ содержащие:
+The result will be a message containing:
 
 state:
 
-состояние: 1 для успешного обновления и 0 для неуспешного обновления
+Status: 1 for successful update and 0 for unsuccessful update.
 
-message: объясняет, почему изменение завершилось неудачно
+message: explains why the change failed.
 
 #### **GET/submit Data/?user__email=< email>**
 
-Возвращает список данных обо всех объектах, которые пользователь с данным email отправил на сервер.
-Вы можете попробовать использовать методы API по адресу  http://127.0.0.1:8000/swagger-ui/
+Returns a list of data about all objects that a user with a given email sent to the server.
+You can try using the API methods at  http://127.0.0.1:8000/swagger-ui/
